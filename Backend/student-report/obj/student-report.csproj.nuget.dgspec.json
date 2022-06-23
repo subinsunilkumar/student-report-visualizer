@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Siemens\\Backend\\student-report\\student-report\\student-report.csproj": {}
+    "D:\\GIT\\student-report-visualizer\\Backend\\student-report\\student-report.csproj": {}
   },
   "projects": {
-    "D:\\Siemens\\Backend\\student-report\\student-report\\student-report.csproj": {
+    "D:\\GIT\\student-report-visualizer\\Backend\\student-report\\student-report.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Siemens\\Backend\\student-report\\student-report\\student-report.csproj",
+        "projectUniqueName": "D:\\GIT\\student-report-visualizer\\Backend\\student-report\\student-report.csproj",
         "projectName": "student-report",
-        "projectPath": "D:\\Siemens\\Backend\\student-report\\student-report\\student-report.csproj",
+        "projectPath": "D:\\GIT\\student-report-visualizer\\Backend\\student-report\\student-report.csproj",
         "packagesPath": "C:\\Users\\Subin Sunil Kumar\\.nuget\\packages\\",
-        "outputPath": "D:\\Siemens\\Backend\\student-report\\student-report\\obj\\",
+        "outputPath": "D:\\GIT\\student-report-visualizer\\Backend\\student-report\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Subin Sunil Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
