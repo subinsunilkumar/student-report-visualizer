@@ -1,0 +1,56 @@
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.csproj.AssemblyReference.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.AssemblyInfoInputs.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.AssemblyInfo.cs
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.csproj.CoreCompileInputs.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\appsettings.json
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.exe
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.deps.json
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.runtimeconfig.json
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.runtimeconfig.dev.json
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\student-report.pdb
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\scopedcss\bundle\student-report.styles.css
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\staticwebassets\student-report.StaticWebAssets.Manifest.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.RazorTargetAssemblyInfo.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.csproj.CopyComplete
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\refint\student-report.dll
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.pdb
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\student-report.genruntimeconfig.cache
+C:\Users\Subin Sunil Kumar\Documents\student-report\student-report\obj\Debug\net5.0\ref\student-report.dll
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.csproj.AssemblyReference.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.GeneratedMSBuildEditorConfig.editorconfig
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.AssemblyInfoInputs.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.AssemblyInfo.cs
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.csproj.CoreCompileInputs.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.MvcApplicationPartsAssemblyInfo.cs
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.MvcApplicationPartsAssemblyInfo.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.dll
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\refint\student-report.dll
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.pdb
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\appsettings.Development.json
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\appsettings.json
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.exe
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.deps.json
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.runtimeconfig.json
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.runtimeconfig.dev.json
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.dll
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\student-report.pdb
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Siemens\Backend\student-report\student-report\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\scopedcss\bundle\student-report.styles.css
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\staticwebassets\student-report.StaticWebAssets.Manifest.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.RazorTargetAssemblyInfo.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.csproj.CopyComplete
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\student-report.genruntimeconfig.cache
+D:\Siemens\Backend\student-report\student-report\obj\Debug\net5.0\ref\student-report.dll
