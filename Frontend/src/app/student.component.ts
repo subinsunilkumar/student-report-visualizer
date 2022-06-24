@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   Students: STUDENTS[] = [];
   subjectList: any[]=[];
   subjectListStr : any[]=[];
-  baseUrl:any='https://localhost:49159/api/Students';
+  baseUrl:any='https://localhost:49161/api/Students';
   ngOnInit() {
     this.get();
     setTimeout(() => {
@@ -112,6 +112,12 @@ export class AppComponent implements OnInit {
     }, 3200);
   }
 
+  deleteDb()
+  {
+    this.delete(1);
+    window.location.reload();
+  }
+
   selectSubjects() {
     console.log("Slider value changed");
     var sliderVal = $('#sliderVal').val();
@@ -194,14 +200,16 @@ export class AppComponent implements OnInit {
 
   delete(id:Number)
   {
+    this.gradeList.forEach(grade => {
+      $('#'+grade).remove();
+    });
     console.log("DELETE Request to "+this.baseUrl);
-    this.http.delete(this.baseUrl+"/"+id)
-        .subscribe();
+    this.http.delete(this.baseUrl+"/"+id).subscribe();
   }
 
 
   constructor(private http: HttpClient){
-    console.log("Constructor Initialiized");
+    console.log("Constructor Initialiazed");
   }
 }
 

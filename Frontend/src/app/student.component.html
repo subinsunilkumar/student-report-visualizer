@@ -9,6 +9,7 @@
     <span id="importState" class="importStatus"></span>
       <input type="file" id="fileUpload" class="file-upload" (change)="importData($event)" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
   </div>
+  <label style="font-weight: bold;" class="file-upload" (click)="deleteDb()">Reset API</label>
   <br />
   <br />
   <br />

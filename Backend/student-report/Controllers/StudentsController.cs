@@ -9,17 +9,7 @@ namespace student_report.Controllers
     [EnableCors("CorsPolicy")]
     public class StudentsController : ControllerBase
     {
-        static List<Student> students = new List<Student>()
-            {
-                new Student(){Name="Subin",Grade=1,Subject="Sub-5",Score=85},
-                new Student(){Name="Subin",Grade=5,Subject="Sub-8",Score=91},
-                new Student(){Name="Subin",Grade=8,Subject="Sub-12", Score = 98},
-                new Student(){Name="Subin",Grade=1,Subject="Sub-9", Score = 89},
-                new Student(){Name="Subin",Grade=5,Subject="Sub-2", Score = 86},
-                new Student(){Name="Subin",Grade=5,Subject="Sub-15", Score = 93},
-                new Student(){Name="Subin",Grade=9,Subject="Sub-18", Score = 82},
-                new Student(){Name="Subin",Grade=6,Subject="Sub-14", Score = 88},
-            };
+        static List<Student> students = new List<Student>();
         // GET: api/Students
         [HttpGet]
         public IEnumerable<Student> Get()
@@ -38,7 +28,7 @@ namespace student_report.Controllers
         [HttpPost]
         public void Post([FromBody] Student value)
         {
-            //Skip adding duplicate Record
+            //Skip adding duplicate Record-TO DO
             //var count =students.Count(tmp => (tmp.Name == value.Name && tmp.Subject == value.Subject && tmp.Score == value.Score && tmp.Grade == value.Grade));
             //if(count==0)
             students.Add(value);
@@ -56,7 +46,8 @@ namespace student_report.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            students.RemoveAt(id);
+            //Clear all values
+            students.Clear();
         }
     }
 }
