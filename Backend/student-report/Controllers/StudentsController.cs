@@ -2,6 +2,8 @@
 using student_report.Model;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
+using System.Linq;
+
 namespace student_report.Controllers
 {
     [Route("api/[controller]")]
@@ -14,7 +16,8 @@ namespace student_report.Controllers
         [HttpGet]
         public IEnumerable<Student> Get()
         {
-            return students;
+            return students.OrderBy(x => x.Grade)
+           .ToList();
         }
 
         // GET api/Students/5

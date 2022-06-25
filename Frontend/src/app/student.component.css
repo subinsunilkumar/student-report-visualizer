@@ -43,7 +43,7 @@ th {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 250px;
+  width: 210px;
   height: 25px;
   background: #ff0000;
   cursor: pointer;
@@ -61,7 +61,7 @@ th {
   background: #c6c6c6;
   text-align: center;
   display: inline-block;
-  width: 259px;
+  width: auto;
   height: 100px;
   border-top: 2px solid #8fa3c6;
   border-right: 2px solid #8fa3c6;
@@ -111,9 +111,10 @@ p {
 }
 
 .gradeText {
-  margin-top: 0.5px;
+  /* margin-top: 0.5px; */
+  margin: auto;
   color: black;
-  margin-left: 110px;
+  text-align: center;
   font-weight: bold;
 }
 

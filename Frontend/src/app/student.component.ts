@@ -14,16 +14,14 @@ export class AppComponent implements OnInit {
   data: any;
   title:any='student-report';
   gradeList:any[]=[]
-  gradeSelected:any;
   Students: STUDENTS[] = [];
-  subjectList: any[]=[];
+  subjectIdList: any[]=[];
   subjectListStr : any[]=[];
+  selectedSubjects:any[]=[];
   baseUrl:any='https://localhost:49153/api/Students';
   ngOnInit() {
     this.get();
-    setTimeout(() => {
-      this.selectSubjects();
-    }, 100);
+    
 
     // setInterval(this.get,100);
   }
@@ -122,56 +120,55 @@ export class AppComponent implements OnInit {
   selectSubjects() {
     console.log("Slider value changed");
     var sliderVal = $('#sliderVal').val();
-    var sliderValNum =(Number(sliderVal))/10;
-    this.gradeSelected =this.gradeList[sliderValNum];
-    this.Students.forEach(student => {
-     if(student.grade==this.gradeSelected)
+    var sliderValNum =(Number(sliderVal))/6;
+    // alert(this.subjectIdList.length)
+    this.selectedSubjects = [this.subjectIdList[sliderValNum],this.subjectIdList[sliderValNum+1],this.subjectIdList[sliderValNum+2]];
+    // alert(this.selectedSubjects)
+    this.subjectIdList.forEach(id => {
+      if(this.selectedSubjects.includes(id))
      {
-      $('#'+student.grade+student.subject).css('background-color', '#04ac6c')
-      $('#'+student.grade+student.subject).css('border', '2px solid white');
+      $(id).css('background-color', '#04ac6c')
+      $(id).css('border', '2px solid white');
      }
      else
      {
-      $('#'+student.grade+student.subject).css('border', '2px solid #345898');
-      $('#'+student.grade+student.subject).css('background-color', '#4472c4');
+      $(id).css('border', '2px solid #345898');
+      $(id).css('background-color', '#4472c4');
      }
-     
+     });
+     var totalWidth =0;
+     this.gradeList.forEach(grade => {
+      var width = Number($("#"+grade).width());
+      totalWidth=totalWidth+width;
+      var widthForGrade = width/2- 5;
+      $("#Grade-"+grade).css('margin-left', widthForGrade?.toString()+"px");
+     });
+     $('#sliderVal').attr({
+      "max" : (this.subjectIdList.length-3)*10,        
     });
-    // this.resizeElements()
+    // $("#sliderCont").css('width',totalWidth+"px");
+    // alert(totalWidth)
   }
 
-  resizeElements()
-  {
-    var list =[];
-    this.gradeList.forEach(grade => {
-      list =[];
-      this.Students.forEach(student =>{
-      if(student.grade==grade)
-      {
-        list.push(student.subject)
-      }
-   
-     });
-     $('#'+grade).css('width', 86*list.length+"px")
-    });
-     
-  }
 
   get(){
     console.log("GET Request to "+this.baseUrl);
     this.http.get(this.baseUrl,{responseType: 'text'}).subscribe((res)=>{
       this.data = res
       this.Students = JSON.parse(this.data);
+      this.gradeList=[];
+      this.subjectIdList=[];
       this.Students.forEach(tmp => {
         this.gradeList.push(tmp.grade.toString())
-        
+        this.subjectIdList.push('#'+tmp.grade+tmp.subject);
       });
       this.gradeList=[...new Set(this.gradeList)].sort(function(a,b) {
         return (+a) - (+b);});
-      $('#sliderVal').attr({
-        "max" : this.gradeList.length*10 -10,        
-      });
+      setTimeout(() => {
+        this.selectSubjects();
+      }, 100);
     })
+    // alert()
   }
   
   postId:any;
