@@ -136,7 +136,7 @@ export class AppComponent implements OnInit {
       $(id).css('background-color', '#4472c4');
      }
      });
-     var totalWidth =0;
+     var totalWidth =4*this.gradeList.length;
      this.gradeList.forEach(grade => {
       var width = Number($("#"+grade).width());
       totalWidth=totalWidth+width;
@@ -144,9 +144,9 @@ export class AppComponent implements OnInit {
       $("#Grade-"+grade).css('margin-left', widthForGrade?.toString()+"px");
      });
      $('#sliderVal').attr({
-      "max" : (this.subjectIdList.length-3)*10,        
+      "max" : (this.subjectIdList.length-3)*6,        
     });
-    // $("#sliderCont").css('width',totalWidth+"px");
+     $("#sliderCont").css('width',totalWidth+"px");
     // alert(totalWidth)
   }
 
