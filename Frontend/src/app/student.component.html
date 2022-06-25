@@ -18,7 +18,7 @@
   <div class="grade" id="{{grade}}">
       <div *ngFor="let student of Students" class="divOuter">
           <div class="subject" id="{{student.grade+student.subject}}" *ngIf="student.grade==grade">
-              <p>{{student.subject}}</p>
+              <div class="subjectText">{{student.subject}}</div>
           </div>
       </div>
       <p id="Grade-{{grade}}" class="gradeText">Grade {{grade}}</p>

@@ -67,6 +67,18 @@ th {
   border-right: 2px solid #8fa3c6;
   border-left: 2px solid #8fa3c6;
 }
+
+.subjectText
+{
+  display: inline-block;  
+  word-break: break-word;
+  font-size: 10px;
+  margin-top: 12px;
+  color: white;
+  font-weight: bold;
+  vertical-align:top;
+}
+
 .subject {
   border-radius: 12px;
   display: inline-block;
@@ -157,6 +169,6 @@ input[type="file"] {
 .divFileUpload
 {
   position: absolute; 
-  right: 200px;
+  right: 20px;
   font-weight: bold;
 }
