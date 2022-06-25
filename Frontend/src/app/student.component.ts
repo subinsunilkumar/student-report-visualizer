@@ -3,6 +3,7 @@ import $ from "jquery";
 import * as XLSX from 'xlsx';
 import { STUDENTS } from './student.model';
 import { HttpClient,HttpErrorResponse, HttpHeaders  } from "@angular/common/http";
+import { delay } from "rxjs/operators";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   Students: STUDENTS[] = [];
   subjectList: any[]=[];
   subjectListStr : any[]=[];
-  baseUrl:any='https://localhost:49161/api/Students';
+  baseUrl:any='https://localhost:49153/api/Students';
   ngOnInit() {
     this.get();
     setTimeout(() => {
