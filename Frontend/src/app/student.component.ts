@@ -121,7 +121,6 @@ export class AppComponent implements OnInit {
     console.log("Slider value changed");
     var sliderVal = $('#sliderVal').val();
     var sliderValNum =(Number(sliderVal))/6;
-    // alert(this.subjectIdList.length)
     this.selectedSubjects = [this.subjectIdList[sliderValNum],this.subjectIdList[sliderValNum+1],this.subjectIdList[sliderValNum+2]];
     // alert(this.selectedSubjects)
     this.subjectIdList.forEach(id => {
@@ -160,10 +159,19 @@ export class AppComponent implements OnInit {
       this.subjectIdList=[];
       this.Students.forEach(tmp => {
         this.gradeList.push(tmp.grade.toString())
-        this.subjectIdList.push('#'+tmp.grade+tmp.subject);
+        
       });
       this.gradeList=[...new Set(this.gradeList)].sort(function(a,b) {
         return (+a) - (+b);});
+      this.gradeList.forEach(grade=>
+        {
+          this.Students.forEach(student => {
+            if(student.grade==grade)
+            {
+              this.subjectIdList.push('#'+student.grade+student.subject);
+            }
+          });
+        })
       setTimeout(() => {
         this.selectSubjects();
       }, 100);
@@ -174,17 +182,15 @@ export class AppComponent implements OnInit {
   postId:any;
   post(value:any[])
   {
-    console.log("POST Request to "+this.baseUrl);
-    const headers = { 'content-type': 'text/json' };
-    value.forEach(val => {
-      this.http.post<any>(this.baseUrl, val).subscribe(data => {
-        this.get();
-        setTimeout(() => {
-          this.selectSubjects();
-        }, 200);
 
-    })
-    });
+    console.log("POST Request to "+this.baseUrl);
+    this.http.post<any>(this.baseUrl, value).subscribe(data => {
+      this.get();
+      setTimeout(() => {
+        this.selectSubjects();
+      }, 200);
+
+  })
     
   }
 

@@ -3,7 +3,6 @@ using student_report.Model;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
 using System.Linq;
-
 namespace student_report.Controllers
 {
     [Route("api/[controller]")]
@@ -16,8 +15,7 @@ namespace student_report.Controllers
         [HttpGet]
         public IEnumerable<Student> Get()
         {
-            return students.OrderBy(x => x.Grade)
-           .ToList();
+            return students;
         }
 
         // GET api/Students/5
@@ -29,12 +27,18 @@ namespace student_report.Controllers
 
         // POST api/Students
         [HttpPost]
-        public void Post([FromBody] Student value)
+        public void Post([FromBody] Student[] value)
         {
-            //Skip adding duplicate Record-TO DO
-            //var count =students.Count(tmp => (tmp.Name == value.Name && tmp.Subject == value.Subject && tmp.Score == value.Score && tmp.Grade == value.Grade));
-            //if(count==0)
-            students.Add(value);
+            foreach(Student student in value)
+            {
+                //Skip adding duplicates
+                var count = students.Count(tmp => (tmp.Name == student.Name && tmp.Subject == student.Subject &&  tmp.Grade == student.Grade));
+                if (count == 0)
+                {
+                    students.Add(student);
+                }
+
+            }       
         }
 
         // PUT api/Students/5
