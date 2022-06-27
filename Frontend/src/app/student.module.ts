@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './student-routing.module';
-import { AppComponent } from './student.component';
+import { StudentComponent } from './student.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    StudentComponent
   ],
   imports: [
     BrowserModule,
@@ -15,9 +15,9 @@ import { AppComponent } from './student.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [StudentComponent]
 })
-export class AppModule {  
+export class StudentModule {  
  }
 
 
