@@ -16,7 +16,6 @@ export class StudentComponent implements OnInit {
   gradeList: any[] = []
   Students: STUDENTS[] = [];
   subjectIdList: any[] = [];
-  subjectListStr: any[] = [];
   selectedSubjects: any[] = [];
   selectedSubjectsTmp: any[] = [];
   baseUrl: any = 'https://localhost:49153/api/Students';
@@ -61,7 +60,6 @@ export class StudentComponent implements OnInit {
           console.error("XLSX to JSON Conversion failed!");
           $('#importState').text('Import Failed!');
         }
-
       }
       reader.readAsBinaryString(file);
     }
