@@ -11,19 +11,17 @@ import { delay } from "rxjs/operators";
   styleUrls: ['./student.component.css']
 })
 export class AppComponent implements OnInit {
-  data: any;
+  data: any;  
   title:any='student-report';
   gradeList:any[]=[]
   Students: STUDENTS[] = [];
   subjectIdList: any[]=[];
   subjectListStr : any[]=[];
   selectedSubjects:any[]=[];
+  selectedSubjectsTmp:any[]=[];
   baseUrl:any='https://localhost:49153/api/Students';
   ngOnInit() {
     this.get();
-    
-
-    // setInterval(this.get,100);
   }
 
   importData(event:any)
@@ -59,8 +57,7 @@ export class AppComponent implements OnInit {
           console.error("XLSX to JSON Conversion failed!");
           $('#importState').text('Import Failed!');
         }
-        
-       
+
       }
       reader.readAsBinaryString(file);
     }
@@ -75,15 +72,12 @@ export class AppComponent implements OnInit {
       var headers = lines[0].replace("\r", "").split(",");
   
       for (var i = 1; i < lines.length-1; i++) {
-  
           var obj:any = {};
           var currentline = lines[i].replace("\r", "").split(",");
-  
           for (var j = 0; j < headers.length; j++) {
               obj[headers[j]] = currentline[j];
           }
           result.push(obj);
-  
       }
       var jsonData = JSON.stringify(result[0]);
       if(jsonData.length>0)
@@ -97,7 +91,6 @@ export class AppComponent implements OnInit {
           console.error("CSV to JSON Conversion failed!",);
           $('#importState').text('Import Failed!');
         }
-    
     };
      reader.readAsText(file);
     }
@@ -117,14 +110,14 @@ export class AppComponent implements OnInit {
     window.location.reload();
   }
 
-  selectSubjects() {
-    console.log("Slider value changed");
+
+  subjectSelector()
+  {
     var sliderVal = $('#sliderVal').val();
     var sliderValNum =(Number(sliderVal))/6;
-    this.selectedSubjects = [this.subjectIdList[sliderValNum],this.subjectIdList[sliderValNum+1],this.subjectIdList[sliderValNum+2]];
-    // alert(this.selectedSubjects)
+    this.selectedSubjectsTmp = [this.subjectIdList[sliderValNum],this.subjectIdList[sliderValNum+1],this.subjectIdList[sliderValNum+2]];
     this.subjectIdList.forEach(id => {
-      if(this.selectedSubjects.includes(id))
+      if(this.selectedSubjectsTmp.includes(id))
      {
       $(id).css('background-color', '#04ac6c')
       $(id).css('border', '2px solid white');
@@ -135,6 +128,12 @@ export class AppComponent implements OnInit {
       $(id).css('background-color', '#4472c4');
      }
      });
+  }
+
+  selectSubjects() {
+    console.log("Slider value changed");
+    this.subjectSelector();
+    this.selectedSubjects=this.selectedSubjectsTmp;
      var totalWidth =4*this.gradeList.length;
      this.gradeList.forEach(grade => {
       var width = Number($("#"+grade).width());
@@ -146,7 +145,6 @@ export class AppComponent implements OnInit {
       "max" : (this.subjectIdList.length-3)*6,        
     });
      $("#sliderCont").css('width',totalWidth+"px");
-    // alert(totalWidth)
   }
 
 
@@ -159,7 +157,6 @@ export class AppComponent implements OnInit {
       this.subjectIdList=[];
       this.Students.forEach(tmp => {
         this.gradeList.push(tmp.grade.toString())
-        
       });
       this.gradeList=[...new Set(this.gradeList)].sort(function(a,b) {
         return (+a) - (+b);});
@@ -176,22 +173,18 @@ export class AppComponent implements OnInit {
         this.selectSubjects();
       }, 100);
     })
-    // alert()
   }
   
   postId:any;
   post(value:any[])
   {
-
     console.log("POST Request to "+this.baseUrl);
     this.http.post<any>(this.baseUrl, value).subscribe(data => {
       this.get();
       setTimeout(() => {
         this.selectSubjects();
       }, 200);
-
   })
-    
   }
 
   put(id:Number,value:String)

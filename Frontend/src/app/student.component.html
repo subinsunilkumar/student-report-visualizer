@@ -26,7 +26,7 @@
 </div>
 <h2 *ngIf="gradeList.length==0" style="text-align: center;color:#3a80c1;">API Server is either not running or no data is present!</h2>
   <div id="sliderCont" class="slidecontainer">
-      <input  *ngIf="gradeList.length>0"  type="range" min="0" step="6" max="80" value="0" class="slider" id="sliderVal" (change)="selectSubjects()" />
+      <input  *ngIf="gradeList.length>0"  type="range" min="0" step="6" max="80" value="0" class="slider" id="sliderVal" (mouseup)="selectSubjects()" (input)="subjectSelector()" />
   </div>
   <table class="table table-striped report-table">
       <thead *ngIf="gradeList.length>0">
