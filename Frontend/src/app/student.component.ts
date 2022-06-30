@@ -104,7 +104,6 @@ export class StudentComponent implements OnInit {
 
   deleteDb() {
     this.delete(1);
-    window.location.reload();
   }
 
   //Selects Subjects based on slider position
@@ -137,7 +136,7 @@ export class StudentComponent implements OnInit {
       $("#Grade-" + grade).css('margin-left', widthForGrade?.toString() + "px");
     });
     $('#sliderVal').attr({
-      "max": (this.subjectIdList.length - 3) * 6,
+      "max": (this.subjectIdList.length ) * 6 - 18,
     });
     $("#sliderCont").css('width', totalWidth + "px");
   }
@@ -170,7 +169,6 @@ export class StudentComponent implements OnInit {
   }
 
   //HTTP Post Request 
-  postId: any;
   post(value: any[]) {
     console.log("POST Request to " + this.baseUrl);
     this.http.post<any>(this.baseUrl, value).subscribe(data => {
@@ -184,17 +182,17 @@ export class StudentComponent implements OnInit {
   //HTTP Put Request
   put(id: Number, value: String) {
     console.log("PUT Request to " + this.baseUrl);
-    const body = { "name": "Subin", "grade": 1, "subject": "Sub5", "score": 45 };
     this.http.put<any>(this.baseUrl + "/" + id, value)
-      .subscribe(data => this.postId = data.id);
+      .subscribe();
   }
 
   //HTTP Delete Request 
   delete(id: Number) {
-    this.gradeList.forEach(grade => {
-      $('#' + grade).remove();
-    });
     console.log("DELETE Request to " + this.baseUrl);
-    this.http.delete(this.baseUrl + "/" + id).subscribe();
+    this.http.delete(this.baseUrl + "/" + id).subscribe(
+      data=>{
+        window.location.reload();
+      }
+    );
   }
 }
